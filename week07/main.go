@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"strings"
 )
 
 func main() {
-	var now time.Time = time.Now()
-	fmt.Printf("오늘은 %d 년 %d 월 %d 일\n", now.Year(), int(now.Month()), now.Day())
-	fmt.Printf("지금은 %d 시 %d 분 %d 초\n", now.Hour(), now.Minute(), now.Second())
-
+	var army string = "우리는 !가와 !민에 충성을 다하는 대한민! 육군이다."
+	armyFixed := strings.NewReplacer("!", "국")
+	fmt.Println(army)
+	fmt.Println(armyFixed.Replace(army))
 }
