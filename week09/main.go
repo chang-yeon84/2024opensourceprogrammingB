@@ -16,26 +16,31 @@ func main() {
 	answer := rand.Intn(6) + 1 // 범위 1~6
 	fmt.Println(answer)
 
-	fmt.Print("숫자 입력 : ")
-	in := bufio.NewReader(os.Stdin)
-	input, err := in.ReadString('\n')
+	for guesses := 0; guesses < 3; guesses++ {
 
-	if err != nil {
-		log.Fatal(err)
-	}
+		fmt.Print("숫자 입력 : ")
+		in := bufio.NewReader(os.Stdin)
+		input, err := in.ReadString('\n')
 
-	input = strings.TrimSpace(input)
-	guess, err := strconv.Atoi(input)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(guess)
+		if err != nil {
+			log.Fatal(err)
+		}
 
-	if answer == guess {
-		fmt.Println("정답")
-	} else if answer > guess {
-		fmt.Println("입력하신 값은 정답보다 작은 수 입니다.")
-	} else {
-		fmt.Println("입력하신 값은 정답보다 큽니다. ")
+		input = strings.TrimSpace(input)
+		guess, err := strconv.Atoi(input)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(guess)
+
+		if answer == guess {
+			fmt.Println("정답")
+			break
+		} else if answer > guess {
+			fmt.Println("입력하신 값은 정답보다 작은 수 입니다.")
+		} else {
+			fmt.Println("입력하신 값은 정답보다 큽니다.")
+
+		}
 	}
 }
