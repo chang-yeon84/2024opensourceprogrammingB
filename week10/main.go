@@ -23,11 +23,16 @@ func main() {
 	}
 
 	counts := 0
-	j := 1
-	for j <= n {
+	j := 2
+	for j < n {
 		if n%j == 0 {
 			counts = counts + 1
 		}
 		j++
+	}
+	if counts == 2 {
+		fmt.Printf("%d is prime numbers.", n)
+	} else {
+		fmt.Printf("%d is not prime numbers.", n)
 	}
 }
