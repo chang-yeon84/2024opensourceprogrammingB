@@ -32,15 +32,15 @@ func main() {
 		isprime = true
 	} else if n%2 == 0 { //2를 제외한 짝수는 모두 소수가 아님
 		isprime = false
-	} else {
-		j := 2
+	} else { //add number
+		j := 3 // change start value
 		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isprime = false
 				break
 			}
 			fmt.Printf("%d ", j) //check j loop
-			j++
+			j = j + 2
 		}
 	}
 
