@@ -28,6 +28,10 @@ func main() {
 
 	if n <= 1 {
 		isprime = false
+	} else if n == 2 {
+		isprime = true
+	} else if n%2 == 0 { //2를 제외한 짝수는 모두 소수가 아님
+		isprime = false
 	} else {
 		j := 2
 		for j <= int(math.Sqrt(float64(n))) {
