@@ -31,7 +31,9 @@ func main() {
 		for j < n {
 			if n%j == 0 {
 				isprime = false
+				break
 			}
+			fmt.Printf("%d ", j) //check j loop
 			j++
 		}
 	}
