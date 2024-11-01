@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -30,16 +29,17 @@ func main() {
 		isprime = false
 	} else if n == 2 {
 		isprime = true
-	} else if n%2 == 0 { //2를 제외한 짝수는 모두 소수가 아님
+	} else if n%2 == 0 {
 		isprime = false
-	} else { //add number
-		j := 3 // change start value
-		for j <= int(math.Sqrt(float64(n))) {
+	} else {
+		j := 3
+		//for j <= int(math.Sqrt(float64(n))) {
+		for j*j <= n {
 			if n%j == 0 {
 				isprime = false
 				break
 			}
-			fmt.Printf("%d ", j) //check j loop
+			fmt.Printf("%d ", j)
 			j = j + 2
 		}
 	}
