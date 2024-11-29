@@ -2,24 +2,21 @@ package main
 
 import "fmt"
 
+type student struct {
+	id   int
+	name string
+	gpa  float32
+}
+
 func main() {
-	ages := make(map[string]int)
-
-	var name string
-	var age int
-	for {
-		fmt.Print("Name :")
-		fmt.Scanln(&name)
-		if name == "q" {
-			break
-		}
-		fmt.Print("Age? ")
-		fmt.Scanln(&age)
-
-		ages[name] = age
-	}
-	for k, v := range ages {
-		fmt.Printf("%s is %d years old", k, v)
-	}
-
+	var student1 student
+	student1.id = 20241111
+	student1.name = "heung min"
+	fmt.Println(student1.id)
+	student1.gpa = 4.5
+	var student2 student
+	student2.id = 20241234
+	student2.name = "seo jihey"
+	student2.gpa = 4.4
+	fmt.Println(student2.gpa)
 }
